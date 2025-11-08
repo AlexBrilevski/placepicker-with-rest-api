@@ -3,7 +3,18 @@ export async function fetchAvailablePlaces() {
   const respData = await response.json();
 
   if (!response.ok) {
-    throw new Error('Failed to fetch places');
+    throw new Error('Failed to fetch available places');
+  }
+
+  return respData.places;
+}
+
+export async function fetchUserPlaces() {
+  const response = await fetch('http://localhost:3000/user-places');
+  const respData = await response.json();
+
+  if (!response.ok) {
+    throw new Error('Failed to fetch saved places');
   }
 
   return respData.places;
