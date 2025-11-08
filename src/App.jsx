@@ -43,7 +43,7 @@ function App() {
     }
   }
 
-  const handleRemovePlace = useCallback(async function handleRemovePlace() {
+  const handleRemovePlace = useCallback(async () => {
     setUserPlaces((prevPickedPlaces) =>
       prevPickedPlaces.filter((place) => place.id !== selectedPlace.current.id)
     );
@@ -56,7 +56,7 @@ function App() {
     }
 
     setModalIsOpen(false);
-  }, []);
+  }, [userPlaces]);
 
   function handleHideError() {
     setErrorUpdatingPlaces(null);
